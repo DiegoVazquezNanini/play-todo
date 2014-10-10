@@ -20,10 +20,10 @@ object List extends Controller {
   }
 
   def post_list = Action { implicit request =>
-    val person = ListForm.bindFromRequest.get
-    println(request + " " + person)
-  	DB.save(person)
-  	Redirect(routes.Application.index)
+    val list = ListForm.bindFromRequest.get
+    println(request + " " + list)
+  	DB.save(list)
+  	Redirect(routes.List.index)
   }
 
   def get_lists = Action {

@@ -3,13 +3,9 @@
 # ~~~~
 
 # Home page
-#GET     /                           controllers.Application.index
-#POST    /person                     controllers.Application.addPerson
-#GET     /persons                    controllers.Application.getPersons
-
-GET     /                           controllers.Application.index
-GET     /lists                      controllers.Lists.get_lists
-POST    /list                       controllers.Lists.post_list
+GET     /                           controllers.List.index
+GET     /lists                      controllers.List.get_lists
+POST    /list                       controllers.List.post_list
 
 
 # Map static resources from the /public folder to the /assets URL path
