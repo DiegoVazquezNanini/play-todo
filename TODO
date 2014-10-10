@@ -1,10 +1,15 @@
 
-GET /list
+GET /lists
 POST /list
 
 GET /list/:id
 POST /list/:id
+DELETE /list/:id
 
 GET /list/:id/:item
+PUT /list/:id/:item
 DELETE /list/:id/:item
 
+List Attributes
+Name:
+Description:
