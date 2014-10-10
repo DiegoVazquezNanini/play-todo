@@ -1,0 +1,10 @@
+
+GET /list
+POST /list
+
+GET /list/:id
+POST /list/:id
+
+GET /list/:id/:item
+DELETE /list/:id/:item
+
