@@ -28,7 +28,10 @@ object ListController extends Controller {
 
   def get_lists = Action {
     val lists = DB.query[List].fetch()
-    Ok(Json.toJson(lists))
+    Ok(Json.toJson(lists)).withHeaders(
+      CACHE_CONTROL -> "max-age=3600",
+      ETAG -> "bla"
+    )
   }
 
 }

@@ -10,13 +10,15 @@ GET       /                           controllers.ListController.index
 GET       /lists                      controllers.ListController.get_lists
 POST      /list                       controllers.ListController.post_list
 
-GET       /list/:list_id              controllers.ListControllerId.get_list(list_id: Int)
-POST      /list/:list_id              controllers.ListControllerId.post_list(list_id: Int)
-DELETE    /list/:list_id              controllers.ListControllerId.delete_list(list_id: Int)
+GET       /diego                      controllers.Test.get_test()
 
-# GET     /list/:list_id/:item_id          controllers.ItemController.get_item(list_id:Int, item_id: Int)
-# PUT     /list/:list_id/:item_id          controllers.ItemController.put_item(list_id:Int, item_id: Int)
-# DELETE  /list/:list_id/:item_id          controllers.ItemController.delete_item(list_id:Int, item_id: Int)
+GET       /list/:listId               controllers.ListControllerId.get_list(listId: Int)
+POST      /list/:listId               controllers.ListControllerId.post_list(listId: Int)
+DELETE    /list/:listId               controllers.ListControllerId.delete_list(listId: Int)
+
+# GET     /list/:listId/:itemId       controllers.ItemController.get_item(listId:Int, itemId: Int)
+# PUT     /list/:listId/:itemId       controllers.ItemController.put_item(listId:Int, itemId: Int)
+# DELETE  /list/:listId/:itemId       controllers.ItemController.delete_item(listId:Int, itemId: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
