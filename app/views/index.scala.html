@@ -3,12 +3,12 @@
 @main("Welcome to Play") {
 	<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
 
-	<ul id="lists"></ul>
-
-	<form method="POST" action="@routes.List.post_list()">
-        <p> TODO List
-		<input type="text" name="name"/>
-        <input type="text" name="description"/>
-		<button>Create TODO list</button>
+	<form method="POST" action="@routes.ListController.post_list()">
+        <p>Create your TODO List
+        <p>Name: <input type="text" name="name"/>
+        Description: <input type="text" name="description"/>
+		<button>Create</button>
 	</form>
+
+    <ul id="lists"></ul>
 }

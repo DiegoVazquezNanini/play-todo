@@ -2,7 +2,18 @@ package models
 
 import play.api.libs.json._
 
-case class List(name: String, description: String)
+case class List(
+//  id: Int,
+  name: String,
+  description: String
+)
+
+case class Item(
+  id: Int,
+  title: String,
+  description: String,
+  state: Int
+)
 
 object List {
   

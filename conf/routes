@@ -3,10 +3,20 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.List.index
-GET     /lists                      controllers.List.get_lists
-POST    /list                       controllers.List.post_list
 
+# HEAD  /healthcheck                  controllers.Application.healthCheck
+
+GET       /                           controllers.ListController.index
+GET       /lists                      controllers.ListController.get_lists
+POST      /list                       controllers.ListController.post_list
+
+GET       /list/:list_id              controllers.ListControllerId.get_list(list_id: Int)
+POST      /list/:list_id              controllers.ListControllerId.post_list(list_id: Int)
+DELETE    /list/:list_id              controllers.ListControllerId.delete_list(list_id: Int)
+
+# GET     /list/:list_id/:item_id          controllers.ItemController.get_item(list_id:Int, item_id: Int)
+# PUT     /list/:list_id/:item_id          controllers.ItemController.put_item(list_id:Int, item_id: Int)
+# DELETE  /list/:list_id/:item_id          controllers.ItemController.delete_item(list_id:Int, item_id: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

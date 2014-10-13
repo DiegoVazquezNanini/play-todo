@@ -1,4 +1,4 @@
 $ ->
-  $.get "/persons", (persons) ->
-    $.each persons, (index, person) ->
-      $("#persons").append $("<li>").text person.name
+  $.get "/lists", (lists) ->
+    $.each lists, (index, list) ->
+      $("#lists").append $("<li>").text list.name + ": " + list.description
