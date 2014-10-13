@@ -9,13 +9,18 @@ case class List(
 )
 
 case class Item(
-  id: Int,
+//  id: Int,
   title: String,
-  description: String,
-  state: Int
+  description: String
+//  state: Int
 )
 
 object List {
   
   implicit val ListFormat = Json.format[List]
+}
+
+object Item {
+
+  implicit val ListFormat = Json.format[Item]
 }

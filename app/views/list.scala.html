@@ -1,0 +1,20 @@
+@(list: String)(content: Html)
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@list</title>
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+        @list
+
+        <form method="POST" action="@routes.ListControllerId.post_list">
+        <p>Create your item
+        <p>Task: <input type="text" name="title"/>
+        Description: <input type="text" name="description"/>
+		<button>Add</button>
+	</form>
+
+    </body>
+</html>

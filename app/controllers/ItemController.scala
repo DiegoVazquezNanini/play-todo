@@ -8,19 +8,18 @@ import play.api.mvc._
 
 object ItemController extends Controller {
 
-  val ListForm: Form[List] = Form {
+  val ItemForm: Form[Item] = Form {
   	mapping(
-      "name" -> nonEmptyText,
+      "title" -> nonEmptyText,
       "description" -> text
-    )(List.apply)(List.unapply)
+    )(Item.apply)(Item.unapply)
   }
 
   def post_item = Action { implicit request =>
-    val item = ListForm.bindFromRequest.get
+    val item = ItemForm.bindFromRequest.get
     println(request + " " + item)
   	DB.save(item)
     Redirect(routes.ListController.index)
-  	//Redirect(routes.ListController.index)
   }
 
   def get_item = Action {
