@@ -1,4 +1,4 @@
-@(list: String)(content: Html)
+@(list: String)
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,9 +7,7 @@
     <script src="@routes.Assets.at("javascripts/jquery-1.11.1.min.js")" type="text/javascript"></script>
     </head>
     <body>
-        @list
-
-        <form method="POST" action="@routes.ListControllerId.post_list">
+        <form method="POST" action="">
         <p>Create your item
         <p>Task: <input type="text" name="title"/>
         Description: <input type="text" name="description"/>

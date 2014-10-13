@@ -24,7 +24,8 @@ object ListControllerId extends Controller {
   }
 
   def get_list(id:Int) = Action {
-    Ok(views.html.index())
+    //val lists = DB.query[List=id].fetch()
+    Ok(views.html.list(list))
   }
 
   def delete_list(id:Int) = Action {
