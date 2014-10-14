@@ -2,4 +2,4 @@ package models
 
 import sorm._
 
-object DB extends Instance(entities = Set(Entity[List]()), url = "jdbc:h2:mem:lists")
+object DB extends Instance(entities = Set(Entity[Board]()), url = "jdbc:h2:mem:lists")

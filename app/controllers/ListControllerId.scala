@@ -8,11 +8,11 @@ import play.api.mvc._
 
 object ListControllerId extends Controller {
 
-  val ListForm: Form[List] = Form {
+  val ListForm: Form[Board] = Form {
   	mapping(
       "name" -> nonEmptyText,
       "description" -> text
-  	)(List.apply)(List.unapply)
+  	)(Board.apply)(Board.unapply)
   }
 
   def post_list(id:Int) = Action { implicit request =>
@@ -29,7 +29,7 @@ object ListControllerId extends Controller {
   }
 
   def delete_list(id:Int) = Action {
-    val lists = DB.query[List].fetch()
+    val lists = DB.query[Board].fetch()
     Ok(Json.toJson(lists))
   }
 

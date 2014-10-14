@@ -12,11 +12,11 @@ object ListController extends Controller {
     Ok(views.html.index())
   }
 
-  val ListForm: Form[List] = Form {
+  val ListForm: Form[Board] = Form {
   	mapping(
       "name" -> nonEmptyText,
       "description" -> text
-    )(List.apply)(List.unapply)
+    )(Board.apply)(Board.unapply)
   }
 
   def post_list = Action { implicit request =>
@@ -27,7 +27,7 @@ object ListController extends Controller {
   }
 
   def get_lists = Action {
-    val lists = DB.query[List].fetch()
+    val lists = DB.query[Board].fetch()
     Ok(Json.toJson(lists)).withHeaders(
       CACHE_CONTROL -> "max-age=3600",
       ETAG -> "bla"

@@ -23,7 +23,7 @@ object ItemController extends Controller {
   }
 
   def get_item = Action {
-  	val items = DB.query[List].fetch()
+  	val items = DB.query[Board].fetch()
   	Ok(Json.toJson(items))
   }
 
