@@ -6,7 +6,7 @@ import play.api.data.Forms._
 import play.api.libs.json.Json
 import play.api.mvc._
 
-object ListControllerId extends Controller {
+object BoardControllerId extends Controller {
 
   val ListForm: Form[Board] = Form {
   	mapping(
@@ -19,18 +19,18 @@ object ListControllerId extends Controller {
     val item = ListForm.bindFromRequest.get
     println(request + " " + item)
   	DB.save(item)
-    Redirect(routes.ListController.index)
+    Redirect(routes.BoardController.index)
   	//Redirect(routes.ListController.index)
   }
 
   def get_list(id:Int) = Action {
-    //val lists = DB.query[List=id].fetch()
-    Ok(views.html.list(list))
+    val board = DB.query[Board].fetch()
+    Ok(views.html.board(board))
   }
 
   def delete_list(id:Int) = Action {
-    val lists = DB.query[Board].fetch()
-    Ok(Json.toJson(lists))
+    val boards = DB.query[Board].fetch()
+    Ok(Json.toJson(boards))
   }
 
 }

@@ -4,21 +4,21 @@
 
 # Home page
 
-# HEAD  /healthcheck                  controllers.Application.healthCheck
+#HEAD     /healthcheck                controllers.Application.healthCheck
 
-GET       /                           controllers.ListController.index
-GET       /lists                      controllers.ListController.get_lists
-POST      /list                       controllers.ListController.post_list
+GET       /                           controllers.BoardController.index
+GET       /list                       controllers.BoardController.get_lists
+POST      /list                       controllers.BoardController.post_list
+
+GET       /list/:boardId               controllers.BoardControllerId.get_list(boardId: Int)
+POST      /list/:boardId               controllers.BoardControllerId.post_list(boardId: Int)
+DELETE    /list/:boardId               controllers.BoardControllerId.delete_list(boardId: Int)
 
 GET       /diego                      controllers.Test.get_test()
 
-GET       /list/:listId               controllers.ListControllerId.get_list(listId: Int)
-POST      /list/:listId               controllers.ListControllerId.post_list(listId: Int)
-DELETE    /list/:listId               controllers.ListControllerId.delete_list(listId: Int)
-
-# GET     /list/:listId/:itemId       controllers.ItemController.get_item(listId:Int, itemId: Int)
-# PUT     /list/:listId/:itemId       controllers.ItemController.put_item(listId:Int, itemId: Int)
-# DELETE  /list/:listId/:itemId       controllers.ItemController.delete_item(listId:Int, itemId: Int)
+# GET     /list/:boardId/:itemId       controllers.ItemController.get_item(boardId:Int, itemId: Int)
+# PUT     /list/:boardId/:itemId       controllers.ItemController.put_item(boardId:Int, itemId: Int)
+# DELETE  /list/:boardId/:itemId       controllers.ItemController.delete_item(boardId:Int, itemId: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

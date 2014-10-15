@@ -3,14 +3,22 @@ package models
 import play.api.libs.json._
 
 case class Board (
-  id: Int,
+  //id: Int,
   name: String,
-  description: String,
-  items: List[Item]
+  description: String
+  //items: List[Item]
 )
 object Board {
 
-  implicit val ListFormat = Json.format[Board]
+/*
+  def apply(name: String, description: String): Board = {
+    new Board(name,description,List())
+  }
+
+  def unapply
+*/
+
+  implicit val BoardFormat = Json.format[Board]
 }
 
 case class Item(

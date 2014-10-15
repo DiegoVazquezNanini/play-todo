@@ -1,13 +1,13 @@
 @()
-@main("Welcome to Play") {
+@main("MyTODO: Board creator") {
 	<script type='text/javascript' src='@routes.Assets.at("javascripts/index.js")'></script>
 
-	<form method="POST" action="@routes.ListController.post_list()">
+	<form method="POST" action="@routes.BoardController.post_list()">
         <p>Create your TODO List
         <p>Name: <input type="text" name="name"/>
         Description: <input type="text" name="description"/>
 		<button>Create</button>
 	</form>
 
-    <ul id="lists"></ul>
+    <ul id="boards"></ul>
 }

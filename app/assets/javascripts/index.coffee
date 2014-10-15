@@ -1,4 +1,4 @@
 $ ->
-  $.get "/lists", (lists) ->
-    $.each lists, (index, list) ->
-      $("#lists").append $("<li>").text list.name + ": " + list.description
+  $.get "/board", (boards) ->
+    $.each boards, (index, board) ->
+      $("#boards").append $("<li>").text board.name + ": " + board.description
