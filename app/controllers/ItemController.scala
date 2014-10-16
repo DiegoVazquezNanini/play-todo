@@ -19,7 +19,7 @@ object ItemController extends Controller {
     val item = ItemForm.bindFromRequest.get
     println(request + " " + item)
   	DB.save(item)
-    Redirect(routes.ListController.index)
+    Redirect(routes.BoardController.index)
   }
 
   def get_item = Action {

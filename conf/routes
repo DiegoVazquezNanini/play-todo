@@ -4,21 +4,21 @@
 
 # Home page
 
-#HEAD     /healthcheck                controllers.Application.healthCheck
+#HEAD     /healthcheck                 controllers.Application.healthCheck
 
-GET       /                           controllers.BoardController.index
-GET       /list                       controllers.BoardController.get_lists
-POST      /list                       controllers.BoardController.post_list
+GET       /                            controllers.BoardController.index
+GET       /board                       controllers.BoardController.get_board
+POST      /board                       controllers.BoardController.post_board
 
-GET       /list/:boardId               controllers.BoardControllerId.get_list(boardId: Int)
-POST      /list/:boardId               controllers.BoardControllerId.post_list(boardId: Int)
-DELETE    /list/:boardId               controllers.BoardControllerId.delete_list(boardId: Int)
+GET       /board/:boardId              controllers.BoardControllerId.get_board(boardId: Int)
+POST      /board/:boardId              controllers.BoardControllerId.post_board(boardId: Int)
+DELETE    /board/:boardId              controllers.BoardControllerId.delete_board(boardId: Int)
 
-GET       /diego                      controllers.Test.get_test()
+GET       /diego                       controllers.Test.get_test()
 
-# GET     /list/:boardId/:itemId       controllers.ItemController.get_item(boardId:Int, itemId: Int)
-# PUT     /list/:boardId/:itemId       controllers.ItemController.put_item(boardId:Int, itemId: Int)
-# DELETE  /list/:boardId/:itemId       controllers.ItemController.delete_item(boardId:Int, itemId: Int)
+# GET     /board/:boardId/:itemId      controllers.ItemController.get_item(boardId:Int, itemId: Int)
+# PUT     /board/:boardId/:itemId      controllers.ItemController.put_item(boardId:Int, itemId: Int)
+# DELETE  /board/:boardId/:itemId      controllers.ItemController.delete_item(boardId:Int, itemId: Int)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

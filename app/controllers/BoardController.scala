@@ -19,15 +19,16 @@ object BoardController extends Controller {
     )(Board.apply)(Board.unapply)
   }
 
-  def post_list = Action { implicit request =>
+  def post_board = Action { implicit request =>
     val board = BoardForm.bindFromRequest.get
     println(request + " " + board)
   	DB.save(board)
     Redirect(routes.BoardController.index)
   }
 
-  def get_lists = Action {
+  def get_board = Action { implicit request =>
     val boards = DB.query[Board].fetch()
+    println(request + " " + boards)
     Ok(Json.toJson(boards)).withHeaders(
       CACHE_CONTROL -> "max-age=3600",
       ETAG -> "bla"
